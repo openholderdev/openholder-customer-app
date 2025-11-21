@@ -1,0 +1,62 @@
+{
+  "welcome": "Welcome to OpenRent",
+  "auth": {
+    "email": {
+      "label": "What's your email?",
+      "placeholder": "investor@example.com",
+      "required": "Email is required",
+      "invalid": "Email format is invalid",
+      "alreadyRegistered": "This email is already registered.",
+      "loginQuestion": "Want to log in?"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Minimum 8 characters",
+      "required": "Password is required",
+      "minLength": "Password must be at least 8 characters",
+      "uppercase": "Must contain at least one uppercase letter",
+      "lowercase": "Must contain at least one lowercase letter",
+      "number": "Must contain at least one number"
+    },
+    "name": {
+      "label": "Full name",
+      "placeholder": "John Doe",
+      "required": "Name is required",
+      "minLength": "Name must be at least 2 characters"
+    },
+    "phone": {
+      "label": "Phone",
+      "labelOptional": "Phone (optional)",
+      "placeholder": "+1 234 567 890",
+      "invalid": "Invalid phone format"
+    },
+    "terms": {
+      "accept": "I agree to the",
+      "termsOfService": "Terms of Service",
+      "and": "and",
+      "privacyPolicy": "Privacy Policy",
+      "required": "You must accept the terms and conditions"
+    },
+    "continue": "Continue",
+    "createAccount": "Create account",
+    "creating": "Creating account...",
+    "processing": "Processing..."
+  },
+  "register": {
+    "title": "Welcome to OpenRent",
+    "completeTitle": "Complete your registration",
+    "completeSubtitle": "We just need a few more details",
+    "success": {
+      "title": "Account created successfully!",
+      "emailSent": "We've sent a verification email to your inbox",
+      "checkInbox": "Please check your inbox and click the verification link to activate your account.",
+      "checkSpam": "Didn't receive the email? Check your spam folder",
+      "resendEmail": "Resend verification email"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  }
+}

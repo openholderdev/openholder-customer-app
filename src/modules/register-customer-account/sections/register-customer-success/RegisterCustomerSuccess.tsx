@@ -16,14 +16,14 @@ export default function RegisterCustomerSuccess() {
       <div className="text-center">
         <IoMdCheckmarkCircleOutline className="mx-auto text-6xl text-green-500" />
         <div className="pt-4">
-          <h1 className="font-semibold text-white text-2xl">Verifica tu email</h1>
-          <p className="text-gray-300 text-md mt-2">
+          <h1 className="font-semibold text-[#171717] text-2xl">Verifica tu email</h1>
+          <p className="text-[#171717] text-md mt-2">
             Te acabamos de enviar un correo con un enlace de verificación. Revisa tu bandeja de entrada.
           </p>
         </div>
       </div>
       <div className="fixed bottom-5 w-[92%]">
-        <button onClick={goBackToHome} className="bg-[#ff0049] w-full py-3 rounded-lg hover:bg-[#ff336e] cursor-pointer">Continuar</button>
+        <button onClick={goBackToHome} className="bg-[#ec0000] text-white font-semibold w-full py-3 rounded-lg hover:bg-[#ff336e] cursor-pointer">Continuar</button>
       </div>
     </section>
   )

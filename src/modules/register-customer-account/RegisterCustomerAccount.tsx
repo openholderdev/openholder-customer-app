@@ -11,7 +11,7 @@ export const RegisterCustomerAccount = observer(function RegisterCustomerAccount
   const store = RegisterCustomerAccountController.getInstance();
 
   return (
-    <div className="bg-[#111111] text-white h-screen py-4 px-4">
+    <div className="h-screen py-4 px-4">
       <RegisterCustomerHeader />
       {store.showEmailVerificationSection && (<RegisterCustomerContent />)}
       {store.showCompleteRegisterSection && (<RegisterCustomerCompleteRegisterSection />)}

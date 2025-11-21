@@ -1,0 +1,62 @@
+{
+  "welcome": "Bienvenido a OpenRent",
+  "auth": {
+    "email": {
+      "label": "¿Cuál es tu email?",
+      "placeholder": "inversor@ejemplo.com",
+      "required": "El email es requerido",
+      "invalid": "El formato del email no es válido",
+      "alreadyRegistered": "Este email ya está registrado.",
+      "loginQuestion": "¿Quieres iniciar sesión?"
+    },
+    "password": {
+      "label": "Contraseña",
+      "placeholder": "Mínimo 8 caracteres",
+      "required": "La contraseña es requerida",
+      "minLength": "La contraseña debe tener al menos 8 caracteres",
+      "uppercase": "Debe contener al menos una mayúscula",
+      "lowercase": "Debe contener al menos una minúscula",
+      "number": "Debe contener al menos un número"
+    },
+    "name": {
+      "label": "Nombre completo",
+      "placeholder": "Juan García López",
+      "required": "El nombre es requerido",
+      "minLength": "El nombre debe tener al menos 2 caracteres"
+    },
+    "phone": {
+      "label": "Teléfono",
+      "labelOptional": "Teléfono (opcional)",
+      "placeholder": "+34 612 345 678",
+      "invalid": "Formato de teléfono inválido"
+    },
+    "terms": {
+      "accept": "Acepto los",
+      "termsOfService": "Términos de Servicio",
+      "and": "y",
+      "privacyPolicy": "Política de Privacidad",
+      "required": "Debes aceptar los términos y condiciones"
+    },
+    "continue": "Continuar",
+    "createAccount": "Crear cuenta",
+    "creating": "Creando cuenta...",
+    "processing": "Procesando..."
+  },
+  "register": {
+    "title": "Bienvenido a OpenRent",
+    "completeTitle": "Completa tu registro",
+    "completeSubtitle": "Solo necesitamos algunos datos más",
+    "success": {
+      "title": "¡Cuenta creada con éxito!",
+      "emailSent": "Hemos enviado un correo de verificación a tu email",
+      "checkInbox": "Por favor, revisa tu bandeja de entrada y haz clic en el enlace de verificación para activar tu cuenta.",
+      "checkSpam": "¿No recibiste el correo? Revisa tu carpeta de spam",
+      "resendEmail": "Reenviar correo de verificación"
+    }
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito"
+  }
+}
