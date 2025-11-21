@@ -2,7 +2,7 @@
 
 import { observer } from "mobx-react-lite";
 import { RegisterCustomerAccountController } from "./RegisterCustomerAccountController";
-import RegisterCustomerContent from "./sections/register-customer-content/RegisterCustomerContent";
+import { RegisterCustomerContent } from "./sections/register-customer-content/RegisterCustomerContent";
 import RegisterCustomerHeader from "./sections/register-customer-header/RegisterCustomerHeader";
 import { RegisterCustomerCompleteRegisterSection } from "./sections/register-customer-complete-register/RegisterCustomerCompleteRegister";
 import RegisterCustomerSuccess from "./sections/register-customer-success/RegisterCustomerSuccess";

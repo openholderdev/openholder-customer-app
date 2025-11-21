@@ -12,6 +12,7 @@ export class RegisterCustomerAccountController {
     showCompleteRegisterSection: false,
     showEmailVerificationSection: true,
     completeRegisterProccess: false,
+    showErrorEmailAlreadyRegistered: false,
   };
 
   errorRegisterProccess: boolean = this.initialState.errorRegisterProccess;
@@ -20,6 +21,7 @@ export class RegisterCustomerAccountController {
   isValidEmail: boolean = this.initialState.isValidEmail;
   showCompleteRegisterSection: boolean = this.initialState.showCompleteRegisterSection;
   showEmailVerificationSection: boolean = this.initialState.showEmailVerificationSection;
+  showErrorEmailAlreadyRegistered: boolean = this.initialState.showErrorEmailAlreadyRegistered;
 
   private constructor() {
     makeAutoObservable(this);
@@ -42,7 +44,9 @@ export class RegisterCustomerAccountController {
         this.showEmailVerificationSection = false;
         this.email = email;
         this.isValidEmail = true;
+        return;
       }
+      this.showErrorEmailAlreadyRegistered = true;
     } catch (error) {
       console.error("Error registering customer account:", error);
     }
