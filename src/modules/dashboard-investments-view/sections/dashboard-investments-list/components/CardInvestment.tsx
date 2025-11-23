@@ -15,7 +15,7 @@ export default function CardInvestment({ entry }: { entry: UIInvestment }) {
   const buttonBg = TOKEN_STATUS_CONFIGS[entry.status].button.bgColor;
   const buttonText = TOKEN_STATUS_CONFIGS[entry.status].button.textColor;
   return (
-    <div className="shadow-lg  rounded-lg pb-4" key={entry.investmentId}>
+    <div className="shadow-lg  rounded-lg pb-4 md:col-span-6" key={entry.investmentId}>
       <div data-testid="investment-gallery-image" className="flex overflow-x-auto gap-2">
         <img
           src={existGallery}
