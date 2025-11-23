@@ -12,78 +12,86 @@ import { RiPsychotherapyLine } from "react-icons/ri";
 
 export const TYPE_INVERSION = {
   REAL_ESTATE: {
-    name: 'Inmobiliario',
+    name: "Inmobiliario",
     icon: <MdHomeWork />,
   },
   TRANSPORT: {
-    name: 'Vehiculos',
+    name: "Vehiculos",
     icon: <FaCarSide />,
   },
   ENERGY: {
-    name: 'Granjas fotovoltaicas',
+    name: "Granjas fotovoltaicas",
     icon: <SlEnergy />,
   },
   OTHER: {
-    name: 'Otras.',
+    name: "Otras.",
     icon: <RiPsychotherapyLine />,
   },
-}
+};
+
+export type DASHBOARD_INVESTMENT_STATUS = "LANDING" | "IN_SALE" | "SOLD_TOKEN" | "IN_CONFIG";
+export type DASHBOARD_ = "LANDING" | "IN_SALE" | "SOLD_TOKEN" | "IN_CONFIG";
 
 export const TOKEN_TYPES_CONFIGS = {
-  REAL_ESTATE: 'Inmobiliario',
-  TRANSPORT: 'Vehiculos',
-  ENERGY: 'Energía',
-  OTHER: 'Otros'
+  REAL_ESTATE: "Inmobiliario",
+  TRANSPORT: "Vehiculos",
+  ENERGY: "Energía",
+  OTHER: "Otros",
 };
 
 export const TOKEN_STATUS_CONFIGS = {
   LANDING: {
-    name: 'Proximamente',
+    type: "LANDING" as DASHBOARD_INVESTMENT_STATUS,
+    name: "Proximamente",
     button: {
-      bgColor: 'bg-yellow-300',
-      textColor: 'text-black',
-      icon: <IoTimerOutline />
-    }
+      bgColor: "bg-yellow-300",
+      textColor: "text-black",
+      icon: <IoTimerOutline />,
+    },
   },
   IN_SALE: {
-    name: 'En venta',
+    type: "IN_SALE" as DASHBOARD_INVESTMENT_STATUS,
+    name: "En venta",
     button: {
-      bgColor: 'bg-orange-200',
-      textColor: 'text-orange-600',
-      icon: <LuShoppingBasket />
-    }
+      bgColor: "bg-orange-200",
+      textColor: "text-orange-600",
+      icon: <LuShoppingBasket />,
+    },
   },
   SOLD_TOKEN: {
-    name: 'Financiado',
+    type: "SOLD_TOKEN" as DASHBOARD_INVESTMENT_STATUS,
+    name: "Financiado",
     button: {
-      bgColor: 'bg-green-200',
-      textColor: 'text-green-600',
-      icon: <CiCircleCheck />
-    }
+      bgColor: "bg-green-200",
+      textColor: "text-green-600",
+      icon: <CiCircleCheck />,
+    },
   },
   IN_CONFIG: {
-    name: 'En reforma',
+    type: "IN_CONFIG" as DASHBOARD_INVESTMENT_STATUS,
+    name: "En reforma",
     button: {
-      bgColor: 'bg-gray-300',
-      textColor: 'text-black',
-      icon: <MdConstruction />
-    }
+      bgColor: "bg-gray-300",
+      textColor: "text-black",
+      icon: <MdConstruction />,
+    },
   },
   IN_RENT: {
-    name: 'En explotación',
+    type: "IN_RENT" as DASHBOARD_INVESTMENT_STATUS,
+    name: "En explotación",
     button: {
-      bgColor: 'bg-purple-400',
-      textColor: 'text-white',
-      icon: <FaMoneyBillTrendUp />
-    }
+      bgColor: "bg-purple-400",
+      textColor: "text-white",
+      icon: <FaMoneyBillTrendUp />,
+    },
   },
   SOLD_OUT: {
-    name: 'Cerrado',
+    type: "SOLD_OUT" as DASHBOARD_INVESTMENT_STATUS,
+    name: "Cerrado",
     button: {
-      bgColor: 'bg-blue-700',
-      textColor: 'text-white',
-      icon: <IoKeySharp />
-    }
+      bgColor: "bg-blue-700",
+      textColor: "text-white",
+      icon: <IoKeySharp />,
+    },
   },
 };
-
