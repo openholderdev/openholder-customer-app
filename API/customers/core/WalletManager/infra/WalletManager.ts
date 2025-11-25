@@ -19,46 +19,59 @@ export class WalletManager implements CustomerManagerDomain {
       const walletCollection = db.collection("customer_wallets");
       const customersCollection = db.collection("customers");
 
+      const isSignGlobal = this.req.body.whitelist === 'GLOBAL';
+      const isSignSpain = this.req.body.whitelist === 'SPAIN';
+
       const walletCustomer : CustomerWallet = {
         customerId: this.req.body.customerId,
         walletId: randomUUID(),
         walletAddress: this.req.body.walletAddress,
         creationDate: new Date(),
-        isVerified: true,
-        investments: []
+        investments: [],
+        globalStatus: isSignGlobal ? 'PENDING' : 'NOT_REQUESTED',
+        spainStatus: isSignSpain ? 'PENDING' : 'NOT_REQUESTED',
+        alias: this.req.body.alias || 'Default Alias'
       };
 
       const customer = await customersCollection.findOne({ customerId: this.req.body.customerId });
       
       if (!customer) {
         return this.res.status(400).json({
-          isError: true,
-          code: 400,
-          message: "Customer does not exist"
+          isSuccess: false,
         });
       }
       
       const existingWallet = await walletCollection.findOne({ customerId: this.req.body.customerId });
       if (existingWallet) {
-        return this.res.status(400).json({
-          isError: true,
-          code: 400,
-          message: "Wallet already exists for this customer"
+        const updateFields: any = {};
+
+        if (isSignGlobal) {
+          updateFields.globalStatus = 'PENDING';
+        }
+        
+        if (isSignSpain) {
+          updateFields.spainStatus = 'PENDING';
+        }
+
+        await walletCollection.updateOne(
+          { customerId: this.req.body.customerId },
+          { 
+            $set: updateFields 
+          }
+        );
+
+        return this.res.status(200).json({
+          isSuccess: true,
         });
       }
 
       await walletCollection.insertOne(walletCustomer);
-      return this.res.status(201).json({
-        isError: false,
-        code: 201,
-        message: "Wallet created successfully",
-        data: walletCustomer
+      return this.res.status(200).json({
+        isSuccess: true,
       });
     } catch (error) {
       return this.res.status(500).json({
-        isError: true,
-        code: 500,
-        message: "Internal server error"
+        isSuccess: false,
       });
     }
   }

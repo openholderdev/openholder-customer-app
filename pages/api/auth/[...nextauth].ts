@@ -25,7 +25,6 @@ export const authOptions: NextAuthOptions = {
 
           return {
             email: customer.email,
-            password: customer.password,
             id: customer.customerId,
             ...customer
           };
@@ -37,8 +36,39 @@ export const authOptions: NextAuthOptions = {
     })
   ],
   callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token.id = user.id;
+        token.email = user.email;
+        token.name = user.name;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      if (session.user) {
+        session.user.id = token.id as string;
+        session.user.email = token.email as string;
+        session.user.name = token.name as string;
+      }
+      return session;
+    },
     async redirect({ url, baseUrl }) {
-      return `${baseUrl}/dashboard`;
+      return `${baseUrl}/auth/login`;
+    }
+  },
+  session: {
+    strategy: "jwt",
+    maxAge: 30 * 24 * 60 * 60, 
+  },
+  cookies: {
+    sessionToken: {
+      name: `next-auth.session-token`,
+      options: {
+        httpOnly: true,
+        sameSite: 'lax',
+        path: '/',
+        secure: process.env.NODE_ENV === 'production'
+      }
     }
   },
   secret: process.env.NEXTAUTH_SECRET,

@@ -9,10 +9,10 @@ export default function WalletDetected() {
             <h4 className="font-semibold text-xl">Nueva wallet detectada</h4>
             <div className="mb-3 rounded-full bg-white text-[#171717] text-xs font-bold flex items-center shadow-md w-26 justify-center">
               <CgCheck className="text-green-500 text-xl" />
-              <span className="text-xs">SDFJ***892</span>
+              <span className="text-xs">2332***3234</span>
             </div>
           </div>
-          <p>
+          <p className="text-sm">
             Has conectado una wallet que no está registrada en tu cuenta. Haz cliec en el botón para
             ver las whiotelists disponibles.
           </p>

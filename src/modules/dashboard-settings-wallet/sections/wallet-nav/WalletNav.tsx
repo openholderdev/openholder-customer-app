@@ -9,7 +9,7 @@ export default function WalletNav() {
   return (
     <section data-testid="dashboard-settings-wallet-nav" className="bg-white">
       <div className="flex w-full px-4 py-6 border-b border-gray-700">
-        <nav className="flex w-full justify-around text-gray-800 font-bold text-sm">
+        <nav className="flex w-full items-center justify-around text-gray-800 font-bold text-sm">
           <div>
             <p className="flex gap-2 items-center cursor-pointer">
               <CgProfile className="text-2xl" />
@@ -25,7 +25,7 @@ export default function WalletNav() {
           <div>
             <p
               onClick={() => router.push("/dashboard/settings/wallet")}
-              className="flex gap-2 items-center cursor-pointer bg-gray-200 px-4 py-2 rounded-full"
+              className="flex gap-2 items-center shadow-md cursor-pointer bg-gray-200 px-4 py-2 rounded-full"
             >
               <HiOutlineWallet className="text-2xl" />
               WALLETS

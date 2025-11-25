@@ -3,8 +3,8 @@ export interface CustomerWallet {
   walletId: string;
   alias: string;
   walletAddress: string;
-  globalStatus: 'PENDING' | 'VERIFIED' | 'REJECTED';
-  spainStatus: 'PENDING' | 'VERIFIED' | 'REJECTED';
+  globalStatus: 'PENDING' | 'VERIFIED' | 'REJECTED' | 'NOT_REQUESTED';
+  spainStatus: 'PENDING' | 'VERIFIED' | 'REJECTED' | 'NOT_REQUESTED';
   creationDate: Date;
-  investments: any // To be defined in future versions
+  investments: any;
 }

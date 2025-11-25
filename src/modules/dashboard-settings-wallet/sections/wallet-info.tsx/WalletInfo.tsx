@@ -4,7 +4,7 @@ export default function WalletInfo() {
       <div className="px-8 py-7 bg-white rounded-lg shadow-md">
         <div className="mb-6">
           <h4 className="text-2xl font-semibold mb-3">Mis wallets</h4>
-          <p>
+          <p className="text-sm">
             Para adquirir tokens de proyectos e interactuar con la plataforma, debes verificar tu
             wallet en una lista blanca de carteras autorizadas llamada "WHITELIST". Más información.
           </p>
