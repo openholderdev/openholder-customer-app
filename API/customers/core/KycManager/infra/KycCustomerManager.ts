@@ -11,6 +11,40 @@ export class KycCustomerManager implements KycCustomerManagerDomain {
     this.req = req;
     this.res = res;
   }
+
+  async getCustomerValidation(): Promise<void> {
+    const { email } = this.req.query;
+    console.log("=======================")
+    console.log(email)
+    console.log("=======================")
+    try {
+      const db = await connectDB();
+      const collection = db.collection("customers");
+      
+      const getCustomer = await collection.findOne({ email: email as string });
+      console.log(email)
+      if (getCustomer) {
+        this.res.status(200).json({
+          isError: false,
+          customerKycCompleted: getCustomer.kycStatus !== "NO_STARTED"
+        });
+      } else {
+        console.log(getCustomer)
+        this.res.status(200).json({
+          isError: true,
+          customerKycCompleted: false
+        });
+      }
+    } catch (error) {
+      console.error(error);
+      this.res.status(500).json({
+        isError: true,
+        code: 500,
+        message: "Internal server error"
+      });
+    }
+  };
+
   async registerCustomerKyc(): Promise<void> {
     try {
       const db = await connectDB();
@@ -57,6 +91,5 @@ export class KycCustomerManager implements KycCustomerManagerDomain {
         message: "Internal server error"
       });
     }
-    return true;
   }
 }
