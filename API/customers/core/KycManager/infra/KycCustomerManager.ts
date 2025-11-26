@@ -14,9 +14,6 @@ export class KycCustomerManager implements KycCustomerManagerDomain {
 
   async getCustomerValidation(): Promise<void> {
     const { email } = this.req.query;
-    console.log("=======================")
-    console.log(email)
-    console.log("=======================")
     try {
       const db = await connectDB();
       const collection = db.collection("customers");

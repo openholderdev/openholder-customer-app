@@ -11,11 +11,20 @@ export default function SignInCustomerView() {
   const router = useRouter();
 
   useEffect(() => {
+    if (localStorage.getItem("registeredEmail")) {
+      router.push("/dashboard/register-complete");
+      return;
+    }
     if (status === "authenticated" && session?.user?.email) {
       router.push("/dashboard/investments");
     }
   }, [status, session, router]);
 
+  useEffect(() => {
+    return () => {
+      localStorage.removeItem("registeredEmail");
+    };
+  }, []);
   if (status === "loading") {
     return <LoginSkeleton />;
   }

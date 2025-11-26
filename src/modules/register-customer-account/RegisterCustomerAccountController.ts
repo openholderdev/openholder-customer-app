@@ -1,6 +1,8 @@
 import { makeAutoObservable } from 'mobx';
 import { RegisterCustomerAccountRepo } from './core/infra/RegisterCustomerAccountRepo';
 import { RegisterCustomerFormData } from './sections/register-customer-complete-register/RegisterCustomerCompleteRegister.types';
+import { signIn } from 'next-auth/react';
+import Cookies from 'js-cookie'
 
 export class RegisterCustomerAccountController {
   private static instance: RegisterCustomerAccountController;
@@ -64,6 +66,12 @@ export class RegisterCustomerAccountController {
         this.completeRegisterProccess = true;
         this.showCompleteRegisterSection = false;
         this.showEmailVerificationSection = false;
+        localStorage.setItem("registeredEmail", this.email);
+        signIn('credentials', {
+          email: this.email,
+          password: register.password,
+          callbackUrl: '/dashboard/register-complete'
+        });
       }
     } catch (error) {
       this.errorRegisterProccess = true;

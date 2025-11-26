@@ -33,7 +33,7 @@ export const LoginCustomerContent = observer(() => {
       signIn("credentials", {
         email,
         password,
-        callbackUrl: "/dashboard/investments",
+        callbackUrl: router.pathname,
       });
     } catch (error) {
       console.error("Login failed", error);

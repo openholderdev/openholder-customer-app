@@ -17,7 +17,10 @@ export default function WalletNav() {
             </p>
           </div>
           <div>
-            <p className="flex gap-2 items-center cursor-pointer">
+            <p
+              onClick={() => router.push("/dashboard/settings/kyc")}
+              className="flex gap-2 items-center cursor-pointer"
+            >
               <HiMiniIdentification className="text-2xl" />
               KYC
             </p>
