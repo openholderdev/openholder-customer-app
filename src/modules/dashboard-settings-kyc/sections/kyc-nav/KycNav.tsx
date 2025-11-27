@@ -11,7 +11,10 @@ export default function KycNav() {
       <div className="flex w-full px-4 py-6 border-b border-gray-700">
         <nav className="flex w-full items-center justify-around text-gray-800 font-bold text-sm">
           <div>
-            <p className="flex gap-2 items-center cursor-pointer">
+            <p
+              onClick={() => router.push("/dashboard/settings/profile")}
+              className="flex gap-2 items-center cursor-pointer"
+            >
               <CgProfile className="text-2xl" />
               PERFIL
             </p>

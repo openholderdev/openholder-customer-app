@@ -5,8 +5,11 @@ import { kycStep1DefaultValues } from "./form/defaultValues";
 import Calendar from "@/src/components/Calendar";
 import Input from "@/src/components/Input";
 import GenderSelect from "@/src/components/GenderSelect";
+import DashboardSettingKyc from "../../DashboardSettingKyc";
+import { DashboardSettingsKycController } from "../../DashboardSettingKycController";
 
 export default function KycPersonalInformation() {
+  const store = DashboardSettingsKycController.getInstance();
   const {
     register,
     handleSubmit,
@@ -17,11 +20,11 @@ export default function KycPersonalInformation() {
   });
 
   const handleSetInformationPersonal = (customer: KycFormData) => {
-    console.log("customer", customer);
+    store.setFormPersonalDataCompleted(customer);
+    store.setStepView(2);
   };
-  console.log(errors);
   return (
-    <section data-testid="dashboard-settings-kyc-step-1" className="pb-24">
+    <section data-testid="dashboard-settings-kyc-step-1" className="pb-10">
       <form onSubmit={handleSubmit(handleSetInformationPersonal)}>
         <div className="px-4 py-6">
           <h3 className="text-xl font-semibold mb-4">Paso 1: Información Personal</h3>

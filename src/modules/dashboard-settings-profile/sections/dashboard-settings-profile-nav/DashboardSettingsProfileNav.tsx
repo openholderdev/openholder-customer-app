@@ -9,15 +9,21 @@ export default function DashboardSettingsProfileNav() {
   return (
     <section data-testid="dashboard-settings-profile-nav" className="bg-white">
       <div className="flex w-full px-4 py-6 border-b border-gray-700">
-        <nav className="flex w-full justify-around text-gray-800 font-bold text-sm">
+        <nav className="flex items-center w-full justify-around text-gray-800 font-bold text-sm">
           <div>
-            <p className="flex gap-2 items-center cursor-pointer">
+            <p
+              onClick={() => router.push("/dashboard/settings/profile")}
+              className="flex gap-2 items-center shadow-md cursor-pointer bg-gray-200 px-4 py-2 rounded-full"
+            >
               <CgProfile className="text-2xl" />
               PERFIL
             </p>
           </div>
           <div>
-            <p className="flex gap-2 items-center cursor-pointer">
+            <p
+              onClick={() => router.push("/dashboard/settings/kyc")}
+              className="flex gap-2 items-center cursor-pointer"
+            >
               <HiMiniIdentification className="text-2xl" />
               KYC
             </p>
